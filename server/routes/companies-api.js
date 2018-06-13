@@ -4,12 +4,10 @@ const router = express.Router()
 const Companies = require('../data-access/companies-model');
 
 
-router.get('/simpleGet', (req, res) => {
+router.get('/companies-api', (req, res) => {
 Companies.findAll().then(data => {
-    console.log(data)
+    res.send(JSON.stringify(data))
 },err=> {console.error(err) } ) ; 
-
-    res.send(JSON.stringify("work"))
 });
 
 

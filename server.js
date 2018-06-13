@@ -18,7 +18,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'dist/AnguSales-fullstack')));
 app.use(express.static(path.join(__dirname, 'node_modules')));
 
-app.use('/', companiesApi);
+app.use('/companies', companiesApi);
 app.use('/customers', customersApi);
 
 
