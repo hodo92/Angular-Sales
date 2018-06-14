@@ -22,5 +22,7 @@ export class CustomersService {
         return this.http.get<Customer[]>(this.customers_api);
     }
 
-
+addNewCustomer(cust:Customer){
+    return this.http.post<Customer>('/customers/addCustomer',cust ) ; 
+}
 }

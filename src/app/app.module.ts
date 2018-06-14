@@ -18,13 +18,22 @@ import { CustomersComponent } from './customers/customers.component';
 import { AppRoutingModule } from './/app-routing.module';
 
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { AddCustomerComponent } from './add-customer/add-customer.component';
+
+import { FormsModule } from '@angular/forms';
+
+import { MatFormFieldModule } from '@angular/material/form-field';
+
+import { MatInputModule } from '@angular/material' ; 
+
 
 
 @NgModule({
   declarations: [
     AppComponent,
     CompaniesComponent,
-    CustomersComponent
+    CustomersComponent,
+    AddCustomerComponent
   ],
   imports: [
     BrowserModule,
@@ -35,7 +44,10 @@ import { MatToolbarModule } from '@angular/material/toolbar';
       MatTableModule,
       MatPaginatorModule,
       AppRoutingModule,
-      MatToolbarModule
+      MatToolbarModule,
+      FormsModule,
+      MatFormFieldModule,
+      MatInputModule
       
       
   ],

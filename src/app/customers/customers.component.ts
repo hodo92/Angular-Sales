@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { CustomersService } from '../customers.service';
 import { Customer } from '../customer';
-import { MatTableDataSource } from '@angular/material';
+import { MatTableDataSource, MatPaginator } from '@angular/material';
 
 
 @Component({
@@ -11,17 +11,17 @@ import { MatTableDataSource } from '@angular/material';
 })
 export class CustomersComponent implements OnInit {
 
-    displayedColumns = ['customer_id', 'firstName', 'lastName', 'company_id', 'email','phone'];
+    displayedColumns = ['customer_id', 'firstName', 'lastName', 'name', 'email','phone'];
     dataSource: MatTableDataSource<Customer>;
-
-
+    @ViewChild(MatPaginator) paginator: MatPaginator;
     constructor(private customersService: CustomersService) { }
 
 
     ngOnInit() {
         this.customersService.getCustomers().subscribe((resp) => {
             this.dataSource = new MatTableDataSource(resp);
-            console.log(this.dataSource);
+            console.log(this.dataSource)
+            this.dataSource.paginator = this.paginator;
         })
     }
 
