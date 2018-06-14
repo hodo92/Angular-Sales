@@ -1,0 +1,30 @@
+.welcome {
+    font-weight: bold;
+    font-size: 2ex;
+}
+
+a{
+color: #FFFFFF;
+text-decoration: none;
+}
+
+.nav-companies {
+  position: relative;
+  margin-left: 25px;
+}
+
+.nav-customers {
+  position: relative;
+  margin-left: 25px;
+   
+}
+
+.nav-companies:hover {
+  cursor: pointer;
+  transform: scale(1.1)
+}
+
+.nav-customers:hover {
+  cursor: pointer;
+  transform: scale(1.1)
+}

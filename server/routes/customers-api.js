@@ -4,7 +4,7 @@ const Companies = require('../data-access/companies-model');
 const Customers = require('../data-access/customers-model');
 
 
-router.get('/getCustomers', (req, res) => {
+router.get('/customers-api', (req, res) => {
     Customers.findAll({ include: [Companies] }).then(data => {
         console.log(data)
         res.send(JSON.stringify(data))

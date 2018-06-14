@@ -14,12 +14,17 @@ import { HttpClientModule } from '@angular/common/http';
 import { MatTableModule } from '@angular/material/table';
 
 import { MatPaginatorModule } from '@angular/material/paginator';
+import { CustomersComponent } from './customers/customers.component';
+import { AppRoutingModule } from './/app-routing.module';
+
+import { MatToolbarModule } from '@angular/material/toolbar';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    CompaniesComponent
+    CompaniesComponent,
+    CustomersComponent
   ],
   imports: [
     BrowserModule,
@@ -28,7 +33,10 @@ import { MatPaginatorModule } from '@angular/material/paginator';
       BrowserAnimationsModule,
       HttpClientModule,
       MatTableModule,
-      MatPaginatorModule
+      MatPaginatorModule,
+      AppRoutingModule,
+      MatToolbarModule
+      
       
   ],
   providers: [CompaniesService],
