@@ -1,12 +1,15 @@
 <form class="customer-form">
+
+    <mat-form-field class="example-full-width">
+        <input matInput [(ngModel)]="newCustomer.firstName" placeholder="Enter First Name"
+            name="firstName" value="">
+    </mat-form-field>
+
     <mat-form-field class="example-full-width">
         <input matInput [(ngModel)]="newCustomer.lastName" placeholder="Enter Last Name" name="lastName"
             value="">
     </mat-form-field>
-    <mat-form-field class="example-full-width">
-        <input matInput [(ngModel)]="newCustomer.firstName" placeholder="Enter First Name" name="firstName"
-            value="">
-    </mat-form-field>
+    
     <mat-form-field class="example-full-width">
         <input matInput [(ngModel)]="newCustomer.email" type="email" placeholder="Enter Email" name="email"
             value="">

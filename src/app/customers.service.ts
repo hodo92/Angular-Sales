@@ -23,6 +23,7 @@ export class CustomersService {
     }
 
 addNewCustomer(cust:Customer){
+
     return this.http.post<Customer>('/customers/addCustomer',cust ) ; 
 }
 }

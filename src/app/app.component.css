@@ -3,6 +3,12 @@
     font-size: 2ex;
 }
 
+.mat-toolbar.mat-primary {
+    background:#7D4E57;
+    color: #fff;
+}
+
+
 a{
 color: #FFFFFF;
 text-decoration: none;

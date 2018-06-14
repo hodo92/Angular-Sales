@@ -26,8 +26,10 @@ newCustomer = new Customer ;
 
 addCustomer(cust:Customer){
     this.newCustomer=cust ; 
-    console.log(this.newCustomer); 
-    this.customersService.addNewCustomer(this.newCustomer) ; 
-this.router.navigate(['customers'])
+    // console.log(this.newCustomer); 
+    this.customersService.addNewCustomer(this.newCustomer).subscribe(data => {
+        this.router.navigate(['customers'])
+    }) ; 
+
 }
 }
