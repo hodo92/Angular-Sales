@@ -22,6 +22,15 @@ export class CompaniesComponent implements OnInit {
             this.dataSource.paginator = this.paginator;
         })
     }
-
+    
+    removeCompany(company_id: number) {
+        console.log(company_id);
+        this.companiesService.removeCompany(company_id).subscribe((resp) => {
+            this.companiesService.getCompanies().subscribe((resp) => {
+                this.dataSource = new MatTableDataSource(resp);
+                this.dataSource.paginator = this.paginator;
+            });
+        });
+    };
 
 }

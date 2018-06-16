@@ -21,4 +21,18 @@ router.post('/addCompany', (req, res) => {
     res.send(JSON.stringify("work"))
 });
 
+
+
+router.delete('/removeCompany/:comp', (req, res) => {
+    comp = req.params.comp;
+    console.log("+++++++company remove++++++++++++++++" + comp);
+    Companies.destroy({ where: { company_id: comp } }).then(data => {
+        res.send(JSON.stringify(data))
+        console.log('company id:' + comp + ' deleted');
+    }, err => {
+        console.error(err)
+    });
+});
+
+
 module.exports = router;

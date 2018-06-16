@@ -20,5 +20,10 @@ export class CompaniesService {
         return this.http.get<Company[]>(this.companies_api);
     }
 
+    removeCompany(company_id: number) {
+        return this.http.delete<Company>('/companies/removeCompany/' + company_id);
+    }
+
+
 
 }
