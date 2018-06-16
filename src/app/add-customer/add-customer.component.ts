@@ -20,13 +20,13 @@ newCustomer = new Customer ;
   ngOnInit() {
       this.route.params.subscribe(params => {
           this.newCustomer.company_id = params.id
-          console.log(this.newCustomer.company_id)
+       
       })
   }
 
 addCustomer(cust:Customer){
     this.newCustomer=cust ; 
-    // console.log(this.newCustomer); 
+   
     this.customersService.addNewCustomer(this.newCustomer).subscribe(data => {
         this.router.navigate(['customers'])
     }) ; 

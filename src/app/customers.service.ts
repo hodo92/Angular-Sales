@@ -15,6 +15,7 @@ export class CustomersService {
 
     private customers_api = "/customers/customers-api";
 
+    
     constructor(private http: HttpClient) { }
 
     getCustomers(): Observable<Customer[]> {
@@ -26,4 +27,11 @@ addNewCustomer(cust:Customer){
 
     return this.http.post<Customer>('/customers/addCustomer',cust ) ; 
 }
+
+    removeCustomer(customer_id: number) {
+        return this.http.delete<Customer>('/customers/removeCustomer/' + customer_id);
+    }
 }
+
+
+

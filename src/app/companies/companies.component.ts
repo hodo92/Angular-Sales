@@ -10,8 +10,8 @@ import { MatTableDataSource, MatPaginator} from '@angular/material';
 })
 
 export class CompaniesComponent implements OnInit {
-    // public companies: Array<Company>
-    displayedColumns = ['company_id', 'name', 'address', 'country','customer-button'];
+    
+    displayedColumns = ['company_id', 'name', 'address', 'country', 'customer-button', "company-button-delete"];
     dataSource: MatTableDataSource<Company>;
     @ViewChild(MatPaginator) paginator: MatPaginator;
     constructor(private companiesService: CompaniesService) { }

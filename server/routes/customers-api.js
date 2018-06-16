@@ -7,7 +7,7 @@ const Customers = require('../data-access/customers-model');
 router.get('/customers-api', (req, res) => {
     
     Customers.findAll({ include: [Companies] }).then(data => {
-        console.log(data)
+        
         res.send(JSON.stringify(data))
     }, err => {
         console.error(err)
@@ -24,11 +24,25 @@ router.post('/addCustomer', (req, res) => {
         email:req.body.email,
         phone:req.body.phone
     }).then((data) => {
-        console.log(data);
+        
         res.send(JSON.stringify("IT WOKRED!"))
     }, (err) => {
         console.error(err)
     });
 });
+
+
+
+router.delete('/removeCustomer/:cust', (req, res) => {
+    cust = req.params.cust;
+    console.log("+++++++CUSTOMERID++++++++++++++++" + cust);
+    Customers.destroy({ where: { customer_id : cust } }).then(data => {
+        res.send(JSON.stringify(data))
+        console.log('customer id:' + cust + ' deleted');
+    }, err => {
+        console.error(err)
+    });
+});
+
 
 module.exports = router;
