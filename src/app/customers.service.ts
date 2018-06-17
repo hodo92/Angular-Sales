@@ -23,6 +23,11 @@ export class CustomersService {
         return this.http.get<Customer[]>(this.customers_api);
     }
 
+    getThisCustomer(customer_id:number): Observable<Customer> {
+        return this.http.get<Customer>('/customers/getThisCustomer/' + customer_id);
+    }
+
+
 addNewCustomer(cust:Customer){
 
     return this.http.post<Customer>('/customers/addCustomer',cust ) ; 
@@ -31,6 +36,8 @@ addNewCustomer(cust:Customer){
     removeCustomer(customer_id: number) {
         return this.http.delete<Customer>('/customers/removeCustomer/' + customer_id);
     }
+
+
 }
 
 

@@ -5,10 +5,12 @@
             CompanySales 
         </h1>
         <span class="nav-companies">
-            <a routerLink="/">Companies</a>
+            <a routerLink="/"
+             routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Companies</a>
         </span>
         <span class="nav-customers">
-            <a routerLink="/customers">Customers</a>
+            <a routerLink="/customers"
+             routerLinkActive="active">Customers</a>
         </span>
 
     </mat-toolbar>

@@ -34,3 +34,8 @@ text-decoration: none;
   cursor: pointer;
   transform: scale(1.1)
 }
+
+a.active {
+    font-weight: bold ; 
+    transform: scale(1.1) ; 
+}

@@ -4,7 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { CompaniesComponent } from './companies/companies.component';
 
-import { MatButtonModule, MatCheckboxModule } from '@angular/material';
+import { MatButtonModule, MatCheckboxModule, MatDialogModule } from '@angular/material';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CompaniesService } from './companies.service';
@@ -24,7 +24,9 @@ import { FormsModule } from '@angular/forms';
 
 import { MatFormFieldModule } from '@angular/material/form-field';
 
-import { MatInputModule } from '@angular/material' ; 
+import { MatInputModule } from '@angular/material';
+
+import { ViewCommentsComponent } from './view-comments/view-comments.component' ; 
 
 
 
@@ -33,7 +35,8 @@ import { MatInputModule } from '@angular/material' ;
     AppComponent,
     CompaniesComponent,
     CustomersComponent,
-    AddCustomerComponent
+    AddCustomerComponent,
+    ViewCommentsComponent
   ],
   imports: [
     BrowserModule,
@@ -47,10 +50,15 @@ import { MatInputModule } from '@angular/material' ;
       MatToolbarModule,
       FormsModule,
       MatFormFieldModule,
-      MatInputModule
+      MatInputModule,
+      MatDialogModule
       
       
   ],
+
+    entryComponents: [
+        ViewCommentsComponent],
+
   providers: [CompaniesService],
   bootstrap: [AppComponent]
 })
