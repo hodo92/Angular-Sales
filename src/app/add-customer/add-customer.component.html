@@ -11,12 +11,13 @@
     </mat-form-field>
     
     <mat-form-field class="example-full-width">
-        <input matInput [(ngModel)]="newCustomer.email" type="email" placeholder="Enter Email" name="email"
-            value="">
-    </mat-form-field>
-    <mat-form-field class="example-full-width">
         <input matInput [(ngModel)]="newCustomer.phone" type="tel" placeholder="Enter Phone number" name="tel"
             value="">
+    </mat-form-field>
+    
+    <mat-form-field class="example-full-width">
+        <input matInput [(ngModel)]="newCustomer.email" type="email" placeholder="Enter Email"
+            name="email" value="">
     </mat-form-field>
     <br>
     <button mat-raised-button (click)="addCustomer(newCustomer)">Add Customer</button>

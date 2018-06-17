@@ -37,6 +37,10 @@ addNewCustomer(cust:Customer){
         return this.http.delete<Customer>('/customers/removeCustomer/' + customer_id);
     }
 
+    getComments(customer_id: number): Observable<Comment[]>{
+        console.log(customer_id);
+        return this.http.get<Comment[]>('/customers/getComments/' + customer_id);
+    }
 
 }
 

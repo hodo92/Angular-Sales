@@ -10,4 +10,6 @@
 <mat-dialog-actions>
     <button mat-raised-button class="add-comment" (click)="addComment()">Add Comment</button>
 </mat-dialog-actions>
-
+<div *ngIf="comments">
+<app-comments [comments]="comments"></app-comments>
+</div>

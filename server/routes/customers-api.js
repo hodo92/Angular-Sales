@@ -2,6 +2,7 @@ const express = require('express')
 const router = express.Router()
 const Companies = require('../data-access/companies-model');
 const Customers = require('../data-access/customers-model');
+const Comments = require('../data-access/comments-model');
 
 
 router.get('/customers-api', (req, res) => {
@@ -39,6 +40,17 @@ router.delete('/removeCustomer/:cust', (req, res) => {
     Customers.destroy({ where: { customer_id : cust } }).then(data => {
         res.send(JSON.stringify(data))
         console.log('customer id:' + cust + ' deleted');
+    }, err => {
+        console.error(err)
+    });
+});
+
+
+router.get('/getComments/:customer_id', (req, res) => {
+    customer_id_num = req.params.customer_id;
+    console.log("+++++" + customer_id_num);
+    Comments.findAll({ where: { customer_id: customer_id_num } }).then(data => {
+        res.send(JSON.stringify(data))
     }, err => {
         console.error(err)
     });

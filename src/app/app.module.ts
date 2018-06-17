@@ -26,7 +26,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 
 import { MatInputModule } from '@angular/material';
 
-import { ViewCommentsComponent } from './view-comments/view-comments.component' ; 
+import { ViewCommentsComponent } from './view-comments/view-comments.component';
+import { CommentsComponent } from './comments/comments.component' ; 
 
 
 
@@ -36,7 +37,8 @@ import { ViewCommentsComponent } from './view-comments/view-comments.component' 
     CompaniesComponent,
     CustomersComponent,
     AddCustomerComponent,
-    ViewCommentsComponent
+    ViewCommentsComponent,
+    CommentsComponent
   ],
   imports: [
     BrowserModule,

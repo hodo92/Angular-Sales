@@ -33,6 +33,7 @@ export class CustomersComponent implements OnInit {
         this.customersService.removeCustomer(customer_id).subscribe((resp) => {
             this.customersService.getCustomers().subscribe((resp) => {
                 this.dataSource = new MatTableDataSource(resp);
+                this.dataSource.paginator = this.paginator;
             });
         });
     };

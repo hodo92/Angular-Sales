@@ -1,7 +1,7 @@
 const Sequelize = require('sequelize');
 const dataAccess = require('./data-access');
 const Companies = require('../data-access/companies-model');
-
+const Comments = require('../data-access/comments-model'); 
 
 const Customers = dataAccess.connection.define('customers', {
     customer_id: {
@@ -26,5 +26,5 @@ const Customers = dataAccess.connection.define('customers', {
 });
 
 Customers.belongsTo(Companies, { foreignKey: 'company_id' });
-
+Customers.hasMany(Comments, { foreignKey: 'customer_id' });
 module.exports = Customers;
