@@ -16,6 +16,13 @@ export class CompaniesComponent implements OnInit {
     @ViewChild(MatPaginator) paginator: MatPaginator;
     constructor(private companiesService: CompaniesService) { }
 
+    applyFilter(filterValue: string) {
+        filterValue = filterValue.trim(); // Remove whitespace
+        filterValue = filterValue.toLowerCase(); // MatTableDataSource defaults to lowercase matches
+        this.dataSource.filter = filterValue;
+    }
+
+    
     ngOnInit() {
         this.companiesService.getCompanies().subscribe((resp) => {
             this.dataSource = new MatTableDataSource(resp);

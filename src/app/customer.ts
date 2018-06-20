@@ -5,6 +5,7 @@ export class Customer {
     public company_id: number;
     public email: string;
     public phone: number;
+    company: any;
 
 
     constructor() {

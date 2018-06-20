@@ -1,5 +1,13 @@
 
 
+<!-- filter option  -->
+
+<mat-form-field>
+    <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+</mat-form-field>
+
+
+
  <!-- Create table  -->
 
 
@@ -61,5 +69,5 @@
         <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
     </table>
 
-    <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+    <mat-paginator [pageSizeOptions]="[10,15, 20]" showFirstLastButtons></mat-paginator>
 </div>
